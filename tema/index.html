@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan Haikal & Sinta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+   <style>
+        :root {
+            --primary: #d4af37;
+            --text-dark: #2d3436;
+            --bg-light: #f9f9f9;
+             --jawa-brown: #5d4037;
+            --jawa-gold: #c5a059;
+            --jawa-cream: #fdfaf4;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero h2 { font-weight: 300; letter-spacing: 5px; margin-bottom: 10px; }
+        .hero h1 { font-family: 'Great Vibes', cursive; font-size: 5rem; margin: 0; }
+
+        /* Button Open */
+        .btn-open {
+            margin-top: 30px;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        /* Section Styling */
+        section { padding: 80px 20px; text-align: center; }
+        .couple h2 { font-family: 'Great Vibes', cursive; font-size: 3rem; color: var(--primary); }
+        
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            max-width: 500px;
+            margin: 20px auto;
+        }
+
+        /* Music Toggle */
+        #music-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .btn-adat {
+            background: var(--jawa-brown); 
+            color: white; 
+            border-radius: 25px; 
+            border: none; 
+            padding: 10px 25px; 
+            transition: 0.3s;
+         }
+        .btn-adat:hover { 
+            background: var(--jawa-gold); 
+            color: white; 
+        }
+
+        /* Hide content before click */
+        #main-content { display: none; }
+    </style>
+</head>
+<body>
+
+    <div id="music-control" onclick="toggleMusic()">
+        <span id="music-icon">🎵</span>
+    </div>
+    <audio id="bg-music" loop>
+        <source src="Hollow After You.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="hero" id="cover">
+        <h2>THE WEDDING OF</h2>
+        <h1>Haikal & Sinta</h1>
+        <p>Sabtu, 15 Juli 2025</p>
+        <button class="btn-open" onclick="openInvitation()">Buka Undangan</button>
+    </div>
+
+    <div id="main-content">
+        <section class="couple">
+            <p>Maha Suci Allah yang telah menciptakan mahluk-Nya berpasang-pasangan.</p>
+            <div class="card">
+                <h2>Haikal Pratama</h2>
+                <p>Putra dari Bpk. Fulan & Ibu Fulanah</p>
+                <div style="font-size: 2rem; margin: 10px 0;">&</div>
+                <h2>Sinta Permata</h2>
+                <p>Putri dari Bpk. Fulan & Ibu Fulanah</p>
+            </div>
+        </section>
+
+        <section style="background-color: #fff;">
+            <h3>Waktu & Tempat</h3>
+            <div class="card">
+                <strong style="color: var(--primary);">AKAD NIKAH</strong>
+                <p>08.00 - 10.00 WIB</p>
+                <hr>
+                <strong style="color: var(--primary);">RESEPSI</strong>
+                <p>11.00 - Selesai</p>
+                <p>Gedung Ballroom Utama<br>Jl. Melati No. 123, Jakarta</p>
+                <a href="https://maps.google.com" class="btn-open" style="display:inline-block; font-size: 0.8rem;">Lihat Lokasi</a>
+            </div>
+
+             <section class="section-padding container text-center">
+            <h2 class="display-4 mb-5">Galeri Prewedding</h2>
+            <div class="row g-2">
+                <div class="col-6 col-md-3" data-aos="flip-left"><img src="https://picsum.photos/400/500?random=1" class="img-fluid rounded"></div>
+                <div class="col-6 col-md-3" data-aos="flip-left"><img src="https://picsum.photos/400/500?random=2" class="img-fluid rounded"></div>
+                <div class="col-6 col-md-3" data-aos="flip-left"><img src="https://picsum.photos/400/500?random=3" class="img-fluid rounded"></div>
+                <div class="col-6 col-md-3" data-aos="flip-left"><img src="https://picsum.photos/400/500?random=4" class="img-fluid rounded"></div>
+            </div>
+        </section>
+        </section>
+
+         <section class="section-padding bg-white">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-7 text-center">
+                        <h2 class="display-4 mb-4">RSVP & Ucapan</h2>
+                        <form class="text-start card-adat p-4 shadow-sm">
+                            <div class="mb-3">
+                                <label class="form-label">Nama Lengkap</label>
+                                <input type="text" class="form-control" placeholder="Masukkan nama Anda">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Kehadiran</label>
+                                <select class="form-select">
+                                    <option>Hadir</option>
+                                    <option>Tidak Dapat Hadir</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Ucapan & Doa</label>
+                                <textarea class="form-control" rows="3" placeholder="Tulis doa restu Anda"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-adat w-100">Kirim Ucapan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding text-center container">
+            <h2 class="display-4 mb-4">Kado Digital</h2>
+            <p>Doa restu Anda sudah cukup bagi kami. Namun jika ingin memberi lebih, Anda dapat mengirimkan melalui:</p>
+            <div class="row justify-content-center">
+                <div class="col-md-4 mb-3">
+                    <div class="card-adat p-4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Bank_Central_Asia.svg" width="100" class="mb-3">
+                        <h5>BCA - 123456789</h5>
+                        <p>a/n Aris Setiawan</p>
+                        <button class="btn btn-sm btn-outline-secondary">Salin Rekening</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer style="padding: 40px; text-align: center; font-size: 0.9rem; color: #888;">
+            <p>Terima kasih atas doa dan restu Anda.</p>
+            <h2 style="font-family: 'Great Vibes', cursive; color: var(--primary);">Haikal & Sinta</h2>
+        </footer>
+    </div>
+
+    <script>
+        const music = document.getElementById("bg-music");
+        const musicIcon = document.getElementById("music-icon");
+
+        function openInvitation() {
+            // Tampilkan konten utama
+            document.getElementById("main-content").style.display = "block";
+            // Scroll ke bawah sedikit
+            window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+            // Putar musik
+            music.play();
+            musicIcon.innerHTML = "⏸️";
+        }
+
+        function toggleMusic() {
+            if (music.paused) {
+                music.play();
+                musicIcon.innerHTML = "⏸️";
+            } else {
+                music.pause();
+                musicIcon.innerHTML = "🎵";
+            }
+        }
+    </script>
+</body>
+</html>
