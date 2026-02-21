@@ -11,3 +11,10 @@
        // this.classList.add('text-white');
     //});
 //});
+
+const selectElement = document.getElementById('navigator');
+selectElement.addEventListener('change', (event) =>
+{
+    const targetId = event.target.value;
+
+});
